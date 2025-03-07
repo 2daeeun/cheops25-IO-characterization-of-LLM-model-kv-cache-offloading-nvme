@@ -1,0 +1,198 @@
+nohup: ignoring input
+NAME         FSTYPE FSVER LABEL           UUID                                 FSAVAIL FSUSE% MOUNTPOINTS
+loop0                                                                                0   100% /snap/core20/2434
+loop1                                                                                0   100% /snap/google-cloud-cli/297
+loop2                                                                                0   100% /snap/google-cloud-cli/299
+loop3                                                                                0   100% /snap/lxd/29351
+loop4                                                                                0   100% /snap/lxd/31333
+loop5                                                                                0   100% /snap/snapd/23258
+loop6                                                                                0   100% /snap/snapd/23545
+nvme1n1                                                                                       
+├─nvme1n1p1  ext4   1.0   cloudimg-rootfs 4b53cde3-5895-4aed-9280-6b1ba90a9029  187.6G    35% /
+├─nvme1n1p14                                                                                  
+└─nvme1n1p15 vfat   FAT32 UEFI            D5C6-9F12                              98.3M     6% /boot/efi
+nvme0n1                                                                                       
+nvme2n1      xfs                          b80d6fd6-988a-46f8-8e4a-03f93f584b89   63.5G     1% /mnt/nvmevirt
+args = Namespace(nvme_folder='/mnt/nvmevirt/deepnvme', mb_size=1, loop=1, validate=False)
+py store_cpu: 0.0009765625 GB, 0.0006331000004138332 secs,  1.54 GB/sec
+args = Namespace(nvme_folder='/mnt/nvmevirt/deepnvme', mb_size=2, loop=1, validate=False)
+py store_cpu: 0.001953125 GB, 0.0009776589995453833 secs,  2.00 GB/sec
+args = Namespace(nvme_folder='/mnt/nvmevirt/deepnvme', mb_size=4, loop=1, validate=False)
+py store_cpu: 0.00390625 GB, 0.0017741960000421386 secs,  2.20 GB/sec
+args = Namespace(nvme_folder='/mnt/nvmevirt/deepnvme', mb_size=8, loop=1, validate=False)
+py store_cpu: 0.0078125 GB, 0.0032548939998378046 secs,  2.40 GB/sec
+args = Namespace(nvme_folder='/mnt/nvmevirt/deepnvme', mb_size=16, loop=1, validate=False)
+py store_cpu: 0.015625 GB, 0.00622251799904916 secs,  2.51 GB/sec
+args = Namespace(nvme_folder='/mnt/nvmevirt/deepnvme', mb_size=32, loop=1, validate=False)
+py store_cpu: 0.03125 GB, 0.012223670999446767 secs,  2.56 GB/sec
+args = Namespace(nvme_folder='/mnt/nvmevirt/deepnvme', mb_size=64, loop=1, validate=False)
+py store_cpu: 0.0625 GB, 0.024143280999851413 secs,  2.59 GB/sec
+args = Namespace(nvme_folder='/mnt/nvmevirt/deepnvme', mb_size=128, loop=1, validate=False)
+py store_cpu: 0.125 GB, 0.04768867299935664 secs,  2.62 GB/sec
+args = Namespace(nvme_folder='/mnt/nvmevirt/deepnvme', mb_size=256, loop=1, validate=False)
+py store_cpu: 0.25 GB, 0.09586321999995562 secs,  2.61 GB/sec
+args = Namespace(nvme_folder='/mnt/nvmevirt/deepnvme', mb_size=512, loop=1, validate=False)
+py store_cpu: 0.5 GB, 0.19270125000002736 secs,  2.59 GB/sec
+args = Namespace(nvme_folder='/mnt/nvmevirt/deepnvme', mb_size=1024, loop=1, validate=False)
+py store_cpu: 1.0 GB, 0.3750732570006221 secs,  2.67 GB/sec
+args = Namespace(nvme_folder='/mnt/nvmevirt/deepnvme', mb_size=2048, loop=1, validate=False)
+py store_cpu: 2.0 GB, 0.76055352900039 secs,  2.63 GB/sec
+lsblk -f
+/home/z_ren/anaconda3/envs/deepspeed-inference/bin/python deepnvme/file_access/py_store_cpu_tensor.py --nvme_folder /mnt/nvmevirt/deepnvme --mb_size 1 --loop 5 > deepnvme-results-xfs/py-store-cpu/deepnvme-py-xfs-store-cpu-1-mb.txt 2>&1
+/home/z_ren/anaconda3/envs/deepspeed-inference/bin/python deepnvme/file_access/py_store_cpu_tensor.py --nvme_folder /mnt/nvmevirt/deepnvme --mb_size 2 --loop 5 > deepnvme-results-xfs/py-store-cpu/deepnvme-py-xfs-store-cpu-2-mb.txt 2>&1
+/home/z_ren/anaconda3/envs/deepspeed-inference/bin/python deepnvme/file_access/py_store_cpu_tensor.py --nvme_folder /mnt/nvmevirt/deepnvme --mb_size 4 --loop 5 > deepnvme-results-xfs/py-store-cpu/deepnvme-py-xfs-store-cpu-4-mb.txt 2>&1
+/home/z_ren/anaconda3/envs/deepspeed-inference/bin/python deepnvme/file_access/py_store_cpu_tensor.py --nvme_folder /mnt/nvmevirt/deepnvme --mb_size 8 --loop 5 > deepnvme-results-xfs/py-store-cpu/deepnvme-py-xfs-store-cpu-8-mb.txt 2>&1
+/home/z_ren/anaconda3/envs/deepspeed-inference/bin/python deepnvme/file_access/py_store_cpu_tensor.py --nvme_folder /mnt/nvmevirt/deepnvme --mb_size 16 --loop 5 > deepnvme-results-xfs/py-store-cpu/deepnvme-py-xfs-store-cpu-16-mb.txt 2>&1
+/home/z_ren/anaconda3/envs/deepspeed-inference/bin/python deepnvme/file_access/py_store_cpu_tensor.py --nvme_folder /mnt/nvmevirt/deepnvme --mb_size 32 --loop 5 > deepnvme-results-xfs/py-store-cpu/deepnvme-py-xfs-store-cpu-32-mb.txt 2>&1
+/home/z_ren/anaconda3/envs/deepspeed-inference/bin/python deepnvme/file_access/py_store_cpu_tensor.py --nvme_folder /mnt/nvmevirt/deepnvme --mb_size 64 --loop 5 > deepnvme-results-xfs/py-store-cpu/deepnvme-py-xfs-store-cpu-64-mb.txt 2>&1
+/home/z_ren/anaconda3/envs/deepspeed-inference/bin/python deepnvme/file_access/py_store_cpu_tensor.py --nvme_folder /mnt/nvmevirt/deepnvme --mb_size 128 --loop 5 > deepnvme-results-xfs/py-store-cpu/deepnvme-py-xfs-store-cpu-128-mb.txt 2>&1
+/home/z_ren/anaconda3/envs/deepspeed-inference/bin/python deepnvme/file_access/py_store_cpu_tensor.py --nvme_folder /mnt/nvmevirt/deepnvme --mb_size 256 --loop 5 > deepnvme-results-xfs/py-store-cpu/deepnvme-py-xfs-store-cpu-256-mb.txt 2>&1
+/home/z_ren/anaconda3/envs/deepspeed-inference/bin/python deepnvme/file_access/py_store_cpu_tensor.py --nvme_folder /mnt/nvmevirt/deepnvme --mb_size 512 --loop 5 > deepnvme-results-xfs/py-store-cpu/deepnvme-py-xfs-store-cpu-512-mb.txt 2>&1
+/home/z_ren/anaconda3/envs/deepspeed-inference/bin/python deepnvme/file_access/py_store_cpu_tensor.py --nvme_folder /mnt/nvmevirt/deepnvme --mb_size 1024 --loop 5 > deepnvme-results-xfs/py-store-cpu/deepnvme-py-xfs-store-cpu-1024-mb.txt 2>&1
+/home/z_ren/anaconda3/envs/deepspeed-inference/bin/python deepnvme/file_access/py_store_cpu_tensor.py --nvme_folder /mnt/nvmevirt/deepnvme --mb_size 2048 --loop 5 > deepnvme-results-xfs/py-store-cpu/deepnvme-py-xfs-store-cpu-2048-mb.txt 2>&1
+/home/z_ren/anaconda3/envs/deepspeed-inference/bin/python deepnvme/file_access/py_store_cpu_tensor.py --nvme_folder /mnt/nvmevirt/deepnvme --mb_size 4096 --loop 5 > deepnvme-results-xfs/py-store-cpu/deepnvme-py-xfs-store-cpu-4096-mb.txt 2>&1
+/home/z_ren/anaconda3/envs/deepspeed-inference/bin/python deepnvme/file_access/py_store_gpu_tensor.py --nvme_folder /mnt/nvmevirt/deepnvme --mb_size 1 --loop 5 > deepnvme-results-xfs/py-store-gpu/deepnvme-py-xfs-store-gpu-1-mb.txt 2>&1
+/home/z_ren/anaconda3/envs/deepspeed-inference/bin/python deepnvme/file_access/py_store_gpu_tensor.py --nvme_folder /mnt/nvmevirt/deepnvme --mb_size 2 --loop 5 > deepnvme-results-xfs/py-store-gpu/deepnvme-py-xfs-store-gpu-2-mb.txt 2>&1
+/home/z_ren/anaconda3/envs/deepspeed-inference/bin/python deepnvme/file_access/py_store_gpu_tensor.py --nvme_folder /mnt/nvmevirt/deepnvme --mb_size 4 --loop 5 > deepnvme-results-xfs/py-store-gpu/deepnvme-py-xfs-store-gpu-4-mb.txt 2>&1
+/home/z_ren/anaconda3/envs/deepspeed-inference/bin/python deepnvme/file_access/py_store_gpu_tensor.py --nvme_folder /mnt/nvmevirt/deepnvme --mb_size 8 --loop 5 > deepnvme-results-xfs/py-store-gpu/deepnvme-py-xfs-store-gpu-8-mb.txt 2>&1
+/home/z_ren/anaconda3/envs/deepspeed-inference/bin/python deepnvme/file_access/py_store_gpu_tensor.py --nvme_folder /mnt/nvmevirt/deepnvme --mb_size 16 --loop 5 > deepnvme-results-xfs/py-store-gpu/deepnvme-py-xfs-store-gpu-16-mb.txt 2>&1
+/home/z_ren/anaconda3/envs/deepspeed-inference/bin/python deepnvme/file_access/py_store_gpu_tensor.py --nvme_folder /mnt/nvmevirt/deepnvme --mb_size 32 --loop 5 > deepnvme-results-xfs/py-store-gpu/deepnvme-py-xfs-store-gpu-32-mb.txt 2>&1
+/home/z_ren/anaconda3/envs/deepspeed-inference/bin/python deepnvme/file_access/py_store_gpu_tensor.py --nvme_folder /mnt/nvmevirt/deepnvme --mb_size 64 --loop 5 > deepnvme-results-xfs/py-store-gpu/deepnvme-py-xfs-store-gpu-64-mb.txt 2>&1
+/home/z_ren/anaconda3/envs/deepspeed-inference/bin/python deepnvme/file_access/py_store_gpu_tensor.py --nvme_folder /mnt/nvmevirt/deepnvme --mb_size 128 --loop 5 > deepnvme-results-xfs/py-store-gpu/deepnvme-py-xfs-store-gpu-128-mb.txt 2>&1
+/home/z_ren/anaconda3/envs/deepspeed-inference/bin/python deepnvme/file_access/py_store_gpu_tensor.py --nvme_folder /mnt/nvmevirt/deepnvme --mb_size 256 --loop 5 > deepnvme-results-xfs/py-store-gpu/deepnvme-py-xfs-store-gpu-256-mb.txt 2>&1
+/home/z_ren/anaconda3/envs/deepspeed-inference/bin/python deepnvme/file_access/py_store_gpu_tensor.py --nvme_folder /mnt/nvmevirt/deepnvme --mb_size 512 --loop 5 > deepnvme-results-xfs/py-store-gpu/deepnvme-py-xfs-store-gpu-512-mb.txt 2>&1
+/home/z_ren/anaconda3/envs/deepspeed-inference/bin/python deepnvme/file_access/py_store_gpu_tensor.py --nvme_folder /mnt/nvmevirt/deepnvme --mb_size 1024 --loop 5 > deepnvme-results-xfs/py-store-gpu/deepnvme-py-xfs-store-gpu-1024-mb.txt 2>&1
+/home/z_ren/anaconda3/envs/deepspeed-inference/bin/python deepnvme/file_access/py_store_gpu_tensor.py --nvme_folder /mnt/nvmevirt/deepnvme --mb_size 2048 --loop 5 > deepnvme-results-xfs/py-store-gpu/deepnvme-py-xfs-store-gpu-2048-mb.txt 2>&1
+/home/z_ren/anaconda3/envs/deepspeed-inference/bin/python deepnvme/file_access/py_store_gpu_tensor.py --nvme_folder /mnt/nvmevirt/deepnvme --mb_size 4096 --loop 5 > deepnvme-results-xfs/py-store-gpu/deepnvme-py-xfs-store-gpu-4096-mb.txt 2>&1
+/home/z_ren/anaconda3/envs/deepspeed-inference/bin/python deepnvme/file_access/py_store_cpu_tensor.py --nvme_folder /mnt/nvmevirt/deepnvme --mb_size 1 --loop 1
+/home/z_ren/anaconda3/envs/deepspeed-inference/bin/python deepnvme/file_access/py_store_cpu_tensor.py --nvme_folder /mnt/nvmevirt/deepnvme --mb_size 2 --loop 1
+/home/z_ren/anaconda3/envs/deepspeed-inference/bin/python deepnvme/file_access/py_store_cpu_tensor.py --nvme_folder /mnt/nvmevirt/deepnvme --mb_size 4 --loop 1
+/home/z_ren/anaconda3/envs/deepspeed-inference/bin/python deepnvme/file_access/py_store_cpu_tensor.py --nvme_folder /mnt/nvmevirt/deepnvme --mb_size 8 --loop 1
+/home/z_ren/anaconda3/envs/deepspeed-inference/bin/python deepnvme/file_access/py_store_cpu_tensor.py --nvme_folder /mnt/nvmevirt/deepnvme --mb_size 16 --loop 1
+/home/z_ren/anaconda3/envs/deepspeed-inference/bin/python deepnvme/file_access/py_store_cpu_tensor.py --nvme_folder /mnt/nvmevirt/deepnvme --mb_size 32 --loop 1
+/home/z_ren/anaconda3/envs/deepspeed-inference/bin/python deepnvme/file_access/py_store_cpu_tensor.py --nvme_folder /mnt/nvmevirt/deepnvme --mb_size 64 --loop 1
+/home/z_ren/anaconda3/envs/deepspeed-inference/bin/python deepnvme/file_access/py_store_cpu_tensor.py --nvme_folder /mnt/nvmevirt/deepnvme --mb_size 128 --loop 1
+/home/z_ren/anaconda3/envs/deepspeed-inference/bin/python deepnvme/file_access/py_store_cpu_tensor.py --nvme_folder /mnt/nvmevirt/deepnvme --mb_size 256 --loop 1
+/home/z_ren/anaconda3/envs/deepspeed-inference/bin/python deepnvme/file_access/py_store_cpu_tensor.py --nvme_folder /mnt/nvmevirt/deepnvme --mb_size 512 --loop 1
+/home/z_ren/anaconda3/envs/deepspeed-inference/bin/python deepnvme/file_access/py_store_cpu_tensor.py --nvme_folder /mnt/nvmevirt/deepnvme --mb_size 1024 --loop 1
+/home/z_ren/anaconda3/envs/deepspeed-inference/bin/python deepnvme/file_access/py_store_cpu_tensor.py --nvme_folder /mnt/nvmevirt/deepnvme --mb_size 2048 --loop 1
+/home/z_ren/anaconda3/envs/deepspeed-inference/bin/python deepnvme/file_access/py_store_cpu_tensor.py --nvme_folder /mnt/nvmevirt/deepnvme --mb_size 4096 --loop 1args = Namespace(nvme_folder='/mnt/nvmevirt/deepnvme', mb_size=4096, loop=1, validate=False)
+py store_cpu: 4.0 GB, 1.5253849780001474 secs,  2.62 GB/sec
+
+/home/z_ren/anaconda3/envs/deepspeed-inference/bin/python deepnvme/file_access/py_load_cpu_tensor.py --input_file /mnt/nvmevirt/deepnvme/test_ouput_1MB.pt --loop 5 > deepnvme-results-xfs/py-load-cpu/deepnvme-py-xfs-load-cpu-1-mb.txt 2>&1
+/home/z_ren/anaconda3/envs/deepspeed-inference/bin/python deepnvme/file_access/py_load_cpu_tensor.py --input_file /mnt/nvmevirt/deepnvme/test_ouput_2MB.pt --loop 5 > deepnvme-results-xfs/py-load-cpu/deepnvme-py-xfs-load-cpu-2-mb.txt 2>&1
+/home/z_ren/anaconda3/envs/deepspeed-inference/bin/python deepnvme/file_access/py_load_cpu_tensor.py --input_file /mnt/nvmevirt/deepnvme/test_ouput_4MB.pt --loop 5 > deepnvme-results-xfs/py-load-cpu/deepnvme-py-xfs-load-cpu-4-mb.txt 2>&1
+/home/z_ren/anaconda3/envs/deepspeed-inference/bin/python deepnvme/file_access/py_load_cpu_tensor.py --input_file /mnt/nvmevirt/deepnvme/test_ouput_8MB.pt --loop 5 > deepnvme-results-xfs/py-load-cpu/deepnvme-py-xfs-load-cpu-8-mb.txt 2>&1
+/home/z_ren/anaconda3/envs/deepspeed-inference/bin/python deepnvme/file_access/py_load_cpu_tensor.py --input_file /mnt/nvmevirt/deepnvme/test_ouput_16MB.pt --loop 5 > deepnvme-results-xfs/py-load-cpu/deepnvme-py-xfs-load-cpu-16-mb.txt 2>&1
+/home/z_ren/anaconda3/envs/deepspeed-inference/bin/python deepnvme/file_access/py_load_cpu_tensor.py --input_file /mnt/nvmevirt/deepnvme/test_ouput_32MB.pt --loop 5 > deepnvme-results-xfs/py-load-cpu/deepnvme-py-xfs-load-cpu-32-mb.txt 2>&1
+/home/z_ren/anaconda3/envs/deepspeed-inference/bin/python deepnvme/file_access/py_load_cpu_tensor.py --input_file /mnt/nvmevirt/deepnvme/test_ouput_64MB.pt --loop 5 > deepnvme-results-xfs/py-load-cpu/deepnvme-py-xfs-load-cpu-64-mb.txt 2>&1
+/home/z_ren/anaconda3/envs/deepspeed-inference/bin/python deepnvme/file_access/py_load_cpu_tensor.py --input_file /mnt/nvmevirt/deepnvme/test_ouput_128MB.pt --loop 5 > deepnvme-results-xfs/py-load-cpu/deepnvme-py-xfs-load-cpu-128-mb.txt 2>&1
+/home/z_ren/anaconda3/envs/deepspeed-inference/bin/python deepnvme/file_access/py_load_cpu_tensor.py --input_file /mnt/nvmevirt/deepnvme/test_ouput_256MB.pt --loop 5 > deepnvme-results-xfs/py-load-cpu/deepnvme-py-xfs-load-cpu-256-mb.txt 2>&1
+/home/z_ren/anaconda3/envs/deepspeed-inference/bin/python deepnvme/file_access/py_load_cpu_tensor.py --input_file /mnt/nvmevirt/deepnvme/test_ouput_512MB.pt --loop 5 > deepnvme-results-xfs/py-load-cpu/deepnvme-py-xfs-load-cpu-512-mb.txt 2>&1
+/home/z_ren/anaconda3/envs/deepspeed-inference/bin/python deepnvme/file_access/py_load_cpu_tensor.py --input_file /mnt/nvmevirt/deepnvme/test_ouput_1024MB.pt --loop 5 > deepnvme-results-xfs/py-load-cpu/deepnvme-py-xfs-load-cpu-1024-mb.txt 2>&1
+/home/z_ren/anaconda3/envs/deepspeed-inference/bin/python deepnvme/file_access/py_load_cpu_tensor.py --input_file /mnt/nvmevirt/deepnvme/test_ouput_2048MB.pt --loop 5 > deepnvme-results-xfs/py-load-cpu/deepnvme-py-xfs-load-cpu-2048-mb.txt 2>&1
+/home/z_ren/anaconda3/envs/deepspeed-inference/bin/python deepnvme/file_access/py_load_cpu_tensor.py --input_file /mnt/nvmevirt/deepnvme/test_ouput_4096MB.pt --loop 5 > deepnvme-results-xfs/py-load-cpu/deepnvme-py-xfs-load-cpu-4096-mb.txt 2>&1
+/home/z_ren/anaconda3/envs/deepspeed-inference/bin/python deepnvme/file_access/py_load_gpu_tensor.py --input_file /mnt/nvmevirt/deepnvme/test_ouput_1MB.pt --loop 5 > deepnvme-results-xfs/py-load-gpu/deepnvme-py-xfs-load-gpu-1-mb.txt 2>&1
+/home/z_ren/anaconda3/envs/deepspeed-inference/bin/python deepnvme/file_access/py_load_gpu_tensor.py --input_file /mnt/nvmevirt/deepnvme/test_ouput_2MB.pt --loop 5 > deepnvme-results-xfs/py-load-gpu/deepnvme-py-xfs-load-gpu-2-mb.txt 2>&1
+/home/z_ren/anaconda3/envs/deepspeed-inference/bin/python deepnvme/file_access/py_load_gpu_tensor.py --input_file /mnt/nvmevirt/deepnvme/test_ouput_4MB.pt --loop 5 > deepnvme-results-xfs/py-load-gpu/deepnvme-py-xfs-load-gpu-4-mb.txt 2>&1
+/home/z_ren/anaconda3/envs/deepspeed-inference/bin/python deepnvme/file_access/py_load_gpu_tensor.py --input_file /mnt/nvmevirt/deepnvme/test_ouput_8MB.pt --loop 5 > deepnvme-results-xfs/py-load-gpu/deepnvme-py-xfs-load-gpu-8-mb.txt 2>&1
+/home/z_ren/anaconda3/envs/deepspeed-inference/bin/python deepnvme/file_access/py_load_gpu_tensor.py --input_file /mnt/nvmevirt/deepnvme/test_ouput_16MB.pt --loop 5 > deepnvme-results-xfs/py-load-gpu/deepnvme-py-xfs-load-gpu-16-mb.txt 2>&1
+/home/z_ren/anaconda3/envs/deepspeed-inference/bin/python deepnvme/file_access/py_load_gpu_tensor.py --input_file /mnt/nvmevirt/deepnvme/test_ouput_32MB.pt --loop 5 > deepnvme-results-xfs/py-load-gpu/deepnvme-py-xfs-load-gpu-32-mb.txt 2>&1
+/home/z_ren/anaconda3/envs/deepspeed-inference/bin/python deepnvme/file_access/py_load_gpu_tensor.py --input_file /mnt/nvmevirt/deepnvme/test_ouput_64MB.pt --loop 5 > deepnvme-results-xfs/py-load-gpu/deepnvme-py-xfs-load-gpu-64-mb.txt 2>&1
+/home/z_ren/anaconda3/envs/deepspeed-inference/bin/python deepnvme/file_access/py_load_gpu_tensor.py --input_file /mnt/nvmevirt/deepnvme/test_ouput_128MB.pt --loop 5 > deepnvme-results-xfs/py-load-gpu/deepnvme-py-xfs-load-gpu-128-mb.txt 2>&1
+/home/z_ren/anaconda3/envs/deepspeed-inference/bin/python deepnvme/file_access/py_load_gpu_tensor.py --input_file /mnt/nvmevirt/deepnvme/test_ouput_256MB.pt --loop 5 > deepnvme-results-xfs/py-load-gpu/deepnvme-py-xfs-load-gpu-256-mb.txt 2>&1
+/home/z_ren/anaconda3/envs/deepspeed-inference/bin/python deepnvme/file_access/py_load_gpu_tensor.py --input_file /mnt/nvmevirt/deepnvme/test_ouput_512MB.pt --loop 5 > deepnvme-results-xfs/py-load-gpu/deepnvme-py-xfs-load-gpu-512-mb.txt 2>&1
+/home/z_ren/anaconda3/envs/deepspeed-inference/bin/python deepnvme/file_access/py_load_gpu_tensor.py --input_file /mnt/nvmevirt/deepnvme/test_ouput_1024MB.pt --loop 5 > deepnvme-results-xfs/py-load-gpu/deepnvme-py-xfs-load-gpu-1024-mb.txt 2>&1
+/home/z_ren/anaconda3/envs/deepspeed-inference/bin/python deepnvme/file_access/py_load_gpu_tensor.py --input_file /mnt/nvmevirt/deepnvme/test_ouput_2048MB.pt --loop 5 > deepnvme-results-xfs/py-load-gpu/deepnvme-py-xfs-load-gpu-2048-mb.txt 2>&1
+/home/z_ren/anaconda3/envs/deepspeed-inference/bin/python deepnvme/file_access/py_load_gpu_tensor.py --input_file /mnt/nvmevirt/deepnvme/test_ouput_4096MB.pt --loop 5 > deepnvme-results-xfs/py-load-gpu/deepnvme-py-xfs-load-gpu-4096-mb.txt 2>&1
+/home/z_ren/anaconda3/envs/deepspeed-inference/bin/python deepnvme/file_access/aio_store_cpu_tensor.py --nvme_folder /mnt/nvmevirt/deepnvme --mb_size 1 --loop 5 > deepnvme-results-xfs/aio-store-cpu/deepnvme-aio-xfs-store-cpu-1-mb.txt 2>&1
+/home/z_ren/anaconda3/envs/deepspeed-inference/bin/python deepnvme/file_access/aio_store_cpu_tensor.py --nvme_folder /mnt/nvmevirt/deepnvme --mb_size 2 --loop 5 > deepnvme-results-xfs/aio-store-cpu/deepnvme-aio-xfs-store-cpu-2-mb.txt 2>&1
+/home/z_ren/anaconda3/envs/deepspeed-inference/bin/python deepnvme/file_access/aio_store_cpu_tensor.py --nvme_folder /mnt/nvmevirt/deepnvme --mb_size 4 --loop 5 > deepnvme-results-xfs/aio-store-cpu/deepnvme-aio-xfs-store-cpu-4-mb.txt 2>&1
+/home/z_ren/anaconda3/envs/deepspeed-inference/bin/python deepnvme/file_access/aio_store_cpu_tensor.py --nvme_folder /mnt/nvmevirt/deepnvme --mb_size 8 --loop 5 > deepnvme-results-xfs/aio-store-cpu/deepnvme-aio-xfs-store-cpu-8-mb.txt 2>&1
+/home/z_ren/anaconda3/envs/deepspeed-inference/bin/python deepnvme/file_access/aio_store_cpu_tensor.py --nvme_folder /mnt/nvmevirt/deepnvme --mb_size 16 --loop 5 > deepnvme-results-xfs/aio-store-cpu/deepnvme-aio-xfs-store-cpu-16-mb.txt 2>&1
+/home/z_ren/anaconda3/envs/deepspeed-inference/bin/python deepnvme/file_access/aio_store_cpu_tensor.py --nvme_folder /mnt/nvmevirt/deepnvme --mb_size 32 --loop 5 > deepnvme-results-xfs/aio-store-cpu/deepnvme-aio-xfs-store-cpu-32-mb.txt 2>&1
+/home/z_ren/anaconda3/envs/deepspeed-inference/bin/python deepnvme/file_access/aio_store_cpu_tensor.py --nvme_folder /mnt/nvmevirt/deepnvme --mb_size 64 --loop 5 > deepnvme-results-xfs/aio-store-cpu/deepnvme-aio-xfs-store-cpu-64-mb.txt 2>&1
+/home/z_ren/anaconda3/envs/deepspeed-inference/bin/python deepnvme/file_access/aio_store_cpu_tensor.py --nvme_folder /mnt/nvmevirt/deepnvme --mb_size 128 --loop 5 > deepnvme-results-xfs/aio-store-cpu/deepnvme-aio-xfs-store-cpu-128-mb.txt 2>&1
+/home/z_ren/anaconda3/envs/deepspeed-inference/bin/python deepnvme/file_access/aio_store_cpu_tensor.py --nvme_folder /mnt/nvmevirt/deepnvme --mb_size 256 --loop 5 > deepnvme-results-xfs/aio-store-cpu/deepnvme-aio-xfs-store-cpu-256-mb.txt 2>&1args = Namespace(nvme_folder='/mnt/nvmevirt/deepnvme', mb_size=1, loop=1, validate=False)
+py store_cpu: 0.0009765625 GB, 0.0006315400005405536 secs,  1.55 GB/sec
+args = Namespace(nvme_folder='/mnt/nvmevirt/deepnvme', mb_size=2, loop=1, validate=False)
+py store_cpu: 0.001953125 GB, 0.0009844739997788565 secs,  1.98 GB/sec
+args = Namespace(nvme_folder='/mnt/nvmevirt/deepnvme', mb_size=4, loop=1, validate=False)
+py store_cpu: 0.00390625 GB, 0.0017355300005874597 secs,  2.25 GB/sec
+args = Namespace(nvme_folder='/mnt/nvmevirt/deepnvme', mb_size=8, loop=1, validate=False)
+py store_cpu: 0.0078125 GB, 0.0032601279999653343 secs,  2.40 GB/sec
+args = Namespace(nvme_folder='/mnt/nvmevirt/deepnvme', mb_size=16, loop=1, validate=False)
+py store_cpu: 0.015625 GB, 0.006172282000989071 secs,  2.53 GB/sec
+args = Namespace(nvme_folder='/mnt/nvmevirt/deepnvme', mb_size=32, loop=1, validate=False)
+py store_cpu: 0.03125 GB, 0.012146844001108548 secs,  2.57 GB/sec
+args = Namespace(nvme_folder='/mnt/nvmevirt/deepnvme', mb_size=64, loop=1, validate=False)
+py store_cpu: 0.0625 GB, 0.023765029000060167 secs,  2.63 GB/sec
+args = Namespace(nvme_folder='/mnt/nvmevirt/deepnvme', mb_size=128, loop=1, validate=False)
+py store_cpu: 0.125 GB, 0.04803327100125898 secs,  2.60 GB/sec
+args = Namespace(nvme_folder='/mnt/nvmevirt/deepnvme', mb_size=256, loop=1, validate=False)
+py store_cpu: 0.25 GB, 0.0951299319985992 secs,  2.63 GB/sec
+args = Namespace(nvme_folder='/mnt/nvmevirt/deepnvme', mb_size=512, loop=1, validate=False)
+py store_cpu: 0.5 GB, 0.1904462260008586 secs,  2.63 GB/sec
+args = Namespace(nvme_folder='/mnt/nvmevirt/deepnvme', mb_size=1024, loop=1, validate=False)
+py store_cpu: 1.0 GB, 0.3760789799998747 secs,  2.66 GB/sec
+args = Namespace(nvme_folder='/mnt/nvmevirt/deepnvme', mb_size=2048, loop=1, validate=False)
+py store_cpu: 2.0 GB, 0.7560860280009365 secs,  2.65 GB/sec
+args = Namespace(nvme_folder='/mnt/nvmevirt/deepnvme', mb_size=4096, loop=1, validate=False)
+py store_cpu: 4.0 GB, 1.5127925420001702 secs,  2.64 GB/sec
+
+/home/z_ren/anaconda3/envs/deepspeed-inference/bin/python deepnvme/file_access/aio_store_cpu_tensor.py --nvme_folder /mnt/nvmevirt/deepnvme --mb_size 512 --loop 5 > deepnvme-results-xfs/aio-store-cpu/deepnvme-aio-xfs-store-cpu-512-mb.txt 2>&1
+/home/z_ren/anaconda3/envs/deepspeed-inference/bin/python deepnvme/file_access/aio_store_cpu_tensor.py --nvme_folder /mnt/nvmevirt/deepnvme --mb_size 1024 --loop 5 > deepnvme-results-xfs/aio-store-cpu/deepnvme-aio-xfs-store-cpu-1024-mb.txt 2>&1
+/home/z_ren/anaconda3/envs/deepspeed-inference/bin/python deepnvme/file_access/aio_store_cpu_tensor.py --nvme_folder /mnt/nvmevirt/deepnvme --mb_size 2048 --loop 5 > deepnvme-results-xfs/aio-store-cpu/deepnvme-aio-xfs-store-cpu-2048-mb.txt 2>&1
+/home/z_ren/anaconda3/envs/deepspeed-inference/bin/python deepnvme/file_access/aio_store_cpu_tensor.py --nvme_folder /mnt/nvmevirt/deepnvme --mb_size 4096 --loop 5 > deepnvme-results-xfs/aio-store-cpu/deepnvme-aio-xfs-store-cpu-4096-mb.txt 2>&1
+/home/z_ren/anaconda3/envs/deepspeed-inference/bin/python deepnvme/file_access/aio_store_gpu_tensor.py --nvme_folder /mnt/nvmevirt/deepnvme --mb_size 1 --loop 5 > deepnvme-results-xfs/aio-store-gpu/deepnvme-aio-xfs-store-gpu-1-mb.txt 2>&1
+/home/z_ren/anaconda3/envs/deepspeed-inference/bin/python deepnvme/file_access/aio_store_gpu_tensor.py --nvme_folder /mnt/nvmevirt/deepnvme --mb_size 2 --loop 5 > deepnvme-results-xfs/aio-store-gpu/deepnvme-aio-xfs-store-gpu-2-mb.txt 2>&1
+/home/z_ren/anaconda3/envs/deepspeed-inference/bin/python deepnvme/file_access/aio_store_gpu_tensor.py --nvme_folder /mnt/nvmevirt/deepnvme --mb_size 4 --loop 5 > deepnvme-results-xfs/aio-store-gpu/deepnvme-aio-xfs-store-gpu-4-mb.txt 2>&1
+/home/z_ren/anaconda3/envs/deepspeed-inference/bin/python deepnvme/file_access/aio_store_gpu_tensor.py --nvme_folder /mnt/nvmevirt/deepnvme --mb_size 8 --loop 5 > deepnvme-results-xfs/aio-store-gpu/deepnvme-aio-xfs-store-gpu-8-mb.txt 2>&1
+/home/z_ren/anaconda3/envs/deepspeed-inference/bin/python deepnvme/file_access/aio_store_gpu_tensor.py --nvme_folder /mnt/nvmevirt/deepnvme --mb_size 16 --loop 5 > deepnvme-results-xfs/aio-store-gpu/deepnvme-aio-xfs-store-gpu-16-mb.txt 2>&1
+/home/z_ren/anaconda3/envs/deepspeed-inference/bin/python deepnvme/file_access/aio_store_gpu_tensor.py --nvme_folder /mnt/nvmevirt/deepnvme --mb_size 32 --loop 5 > deepnvme-results-xfs/aio-store-gpu/deepnvme-aio-xfs-store-gpu-32-mb.txt 2>&1
+/home/z_ren/anaconda3/envs/deepspeed-inference/bin/python deepnvme/file_access/aio_store_gpu_tensor.py --nvme_folder /mnt/nvmevirt/deepnvme --mb_size 64 --loop 5 > deepnvme-results-xfs/aio-store-gpu/deepnvme-aio-xfs-store-gpu-64-mb.txt 2>&1
+/home/z_ren/anaconda3/envs/deepspeed-inference/bin/python deepnvme/file_access/aio_store_gpu_tensor.py --nvme_folder /mnt/nvmevirt/deepnvme --mb_size 128 --loop 5 > deepnvme-results-xfs/aio-store-gpu/deepnvme-aio-xfs-store-gpu-128-mb.txt 2>&1
+/home/z_ren/anaconda3/envs/deepspeed-inference/bin/python deepnvme/file_access/aio_store_gpu_tensor.py --nvme_folder /mnt/nvmevirt/deepnvme --mb_size 256 --loop 5 > deepnvme-results-xfs/aio-store-gpu/deepnvme-aio-xfs-store-gpu-256-mb.txt 2>&1
+/home/z_ren/anaconda3/envs/deepspeed-inference/bin/python deepnvme/file_access/aio_store_gpu_tensor.py --nvme_folder /mnt/nvmevirt/deepnvme --mb_size 512 --loop 5 > deepnvme-results-xfs/aio-store-gpu/deepnvme-aio-xfs-store-gpu-512-mb.txt 2>&1
+/home/z_ren/anaconda3/envs/deepspeed-inference/bin/python deepnvme/file_access/aio_store_gpu_tensor.py --nvme_folder /mnt/nvmevirt/deepnvme --mb_size 1024 --loop 5 > deepnvme-results-xfs/aio-store-gpu/deepnvme-aio-xfs-store-gpu-1024-mb.txt 2>&1
+/home/z_ren/anaconda3/envs/deepspeed-inference/bin/python deepnvme/file_access/aio_store_gpu_tensor.py --nvme_folder /mnt/nvmevirt/deepnvme --mb_size 2048 --loop 5 > deepnvme-results-xfs/aio-store-gpu/deepnvme-aio-xfs-store-gpu-2048-mb.txt 2>&1
+/home/z_ren/anaconda3/envs/deepspeed-inference/bin/python deepnvme/file_access/aio_store_gpu_tensor.py --nvme_folder /mnt/nvmevirt/deepnvme --mb_size 4096 --loop 5 > deepnvme-results-xfs/aio-store-gpu/deepnvme-aio-xfs-store-gpu-4096-mb.txt 2>&1
+/home/z_ren/anaconda3/envs/deepspeed-inference/bin/python deepnvme/file_access/py_store_cpu_tensor.py --nvme_folder /mnt/nvmevirt/deepnvme --mb_size 1 --loop 1
+/home/z_ren/anaconda3/envs/deepspeed-inference/bin/python deepnvme/file_access/py_store_cpu_tensor.py --nvme_folder /mnt/nvmevirt/deepnvme --mb_size 2 --loop 1
+/home/z_ren/anaconda3/envs/deepspeed-inference/bin/python deepnvme/file_access/py_store_cpu_tensor.py --nvme_folder /mnt/nvmevirt/deepnvme --mb_size 4 --loop 1
+/home/z_ren/anaconda3/envs/deepspeed-inference/bin/python deepnvme/file_access/py_store_cpu_tensor.py --nvme_folder /mnt/nvmevirt/deepnvme --mb_size 8 --loop 1
+/home/z_ren/anaconda3/envs/deepspeed-inference/bin/python deepnvme/file_access/py_store_cpu_tensor.py --nvme_folder /mnt/nvmevirt/deepnvme --mb_size 16 --loop 1
+/home/z_ren/anaconda3/envs/deepspeed-inference/bin/python deepnvme/file_access/py_store_cpu_tensor.py --nvme_folder /mnt/nvmevirt/deepnvme --mb_size 32 --loop 1
+/home/z_ren/anaconda3/envs/deepspeed-inference/bin/python deepnvme/file_access/py_store_cpu_tensor.py --nvme_folder /mnt/nvmevirt/deepnvme --mb_size 64 --loop 1
+/home/z_ren/anaconda3/envs/deepspeed-inference/bin/python deepnvme/file_access/py_store_cpu_tensor.py --nvme_folder /mnt/nvmevirt/deepnvme --mb_size 128 --loop 1
+/home/z_ren/anaconda3/envs/deepspeed-inference/bin/python deepnvme/file_access/py_store_cpu_tensor.py --nvme_folder /mnt/nvmevirt/deepnvme --mb_size 256 --loop 1
+/home/z_ren/anaconda3/envs/deepspeed-inference/bin/python deepnvme/file_access/py_store_cpu_tensor.py --nvme_folder /mnt/nvmevirt/deepnvme --mb_size 512 --loop 1
+/home/z_ren/anaconda3/envs/deepspeed-inference/bin/python deepnvme/file_access/py_store_cpu_tensor.py --nvme_folder /mnt/nvmevirt/deepnvme --mb_size 1024 --loop 1
+/home/z_ren/anaconda3/envs/deepspeed-inference/bin/python deepnvme/file_access/py_store_cpu_tensor.py --nvme_folder /mnt/nvmevirt/deepnvme --mb_size 2048 --loop 1
+/home/z_ren/anaconda3/envs/deepspeed-inference/bin/python deepnvme/file_access/py_store_cpu_tensor.py --nvme_folder /mnt/nvmevirt/deepnvme --mb_size 4096 --loop 1
+/home/z_ren/anaconda3/envs/deepspeed-inference/bin/python deepnvme/file_access/aio_load_cpu_tensor.py --input_file /mnt/nvmevirt/deepnvme/test_ouput_1MB.pt --loop 5 > deepnvme-results-xfs/aio-load-cpu/deepnvme-aio-xfs-load-cpu-1-mb.txt 2>&1
+/home/z_ren/anaconda3/envs/deepspeed-inference/bin/python deepnvme/file_access/aio_load_cpu_tensor.py --input_file /mnt/nvmevirt/deepnvme/test_ouput_2MB.pt --loop 5 > deepnvme-results-xfs/aio-load-cpu/deepnvme-aio-xfs-load-cpu-2-mb.txt 2>&1
+/home/z_ren/anaconda3/envs/deepspeed-inference/bin/python deepnvme/file_access/aio_load_cpu_tensor.py --input_file /mnt/nvmevirt/deepnvme/test_ouput_4MB.pt --loop 5 > deepnvme-results-xfs/aio-load-cpu/deepnvme-aio-xfs-load-cpu-4-mb.txt 2>&1
+/home/z_ren/anaconda3/envs/deepspeed-inference/bin/python deepnvme/file_access/aio_load_cpu_tensor.py --input_file /mnt/nvmevirt/deepnvme/test_ouput_8MB.pt --loop 5 > deepnvme-results-xfs/aio-load-cpu/deepnvme-aio-xfs-load-cpu-8-mb.txt 2>&1
+/home/z_ren/anaconda3/envs/deepspeed-inference/bin/python deepnvme/file_access/aio_load_cpu_tensor.py --input_file /mnt/nvmevirt/deepnvme/test_ouput_16MB.pt --loop 5 > deepnvme-results-xfs/aio-load-cpu/deepnvme-aio-xfs-load-cpu-16-mb.txt 2>&1
+/home/z_ren/anaconda3/envs/deepspeed-inference/bin/python deepnvme/file_access/aio_load_cpu_tensor.py --input_file /mnt/nvmevirt/deepnvme/test_ouput_32MB.pt --loop 5 > deepnvme-results-xfs/aio-load-cpu/deepnvme-aio-xfs-load-cpu-32-mb.txt 2>&1
+/home/z_ren/anaconda3/envs/deepspeed-inference/bin/python deepnvme/file_access/aio_load_cpu_tensor.py --input_file /mnt/nvmevirt/deepnvme/test_ouput_64MB.pt --loop 5 > deepnvme-results-xfs/aio-load-cpu/deepnvme-aio-xfs-load-cpu-64-mb.txt 2>&1
+/home/z_ren/anaconda3/envs/deepspeed-inference/bin/python deepnvme/file_access/aio_load_cpu_tensor.py --input_file /mnt/nvmevirt/deepnvme/test_ouput_128MB.pt --loop 5 > deepnvme-results-xfs/aio-load-cpu/deepnvme-aio-xfs-load-cpu-128-mb.txt 2>&1
+/home/z_ren/anaconda3/envs/deepspeed-inference/bin/python deepnvme/file_access/aio_load_cpu_tensor.py --input_file /mnt/nvmevirt/deepnvme/test_ouput_256MB.pt --loop 5 > deepnvme-results-xfs/aio-load-cpu/deepnvme-aio-xfs-load-cpu-256-mb.txt 2>&1
+/home/z_ren/anaconda3/envs/deepspeed-inference/bin/python deepnvme/file_access/aio_load_cpu_tensor.py --input_file /mnt/nvmevirt/deepnvme/test_ouput_512MB.pt --loop 5 > deepnvme-results-xfs/aio-load-cpu/deepnvme-aio-xfs-load-cpu-512-mb.txt 2>&1
+/home/z_ren/anaconda3/envs/deepspeed-inference/bin/python deepnvme/file_access/aio_load_cpu_tensor.py --input_file /mnt/nvmevirt/deepnvme/test_ouput_1024MB.pt --loop 5 > deepnvme-results-xfs/aio-load-cpu/deepnvme-aio-xfs-load-cpu-1024-mb.txt 2>&1
+/home/z_ren/anaconda3/envs/deepspeed-inference/bin/python deepnvme/file_access/aio_load_cpu_tensor.py --input_file /mnt/nvmevirt/deepnvme/test_ouput_2048MB.pt --loop 5 > deepnvme-results-xfs/aio-load-cpu/deepnvme-aio-xfs-load-cpu-2048-mb.txt 2>&1
+/home/z_ren/anaconda3/envs/deepspeed-inference/bin/python deepnvme/file_access/aio_load_cpu_tensor.py --input_file /mnt/nvmevirt/deepnvme/test_ouput_4096MB.pt --loop 5 > deepnvme-results-xfs/aio-load-cpu/deepnvme-aio-xfs-load-cpu-4096-mb.txt 2>&1
+/home/z_ren/anaconda3/envs/deepspeed-inference/bin/python deepnvme/file_access/aio_load_gpu_tensor.py --input_file /mnt/nvmevirt/deepnvme/test_ouput_1MB.pt --loop 5 > deepnvme-results-xfs/aio-load-gpu/deepnvme-aio-xfs-load-gpu-1-mb.txt 2>&1
+/home/z_ren/anaconda3/envs/deepspeed-inference/bin/python deepnvme/file_access/aio_load_gpu_tensor.py --input_file /mnt/nvmevirt/deepnvme/test_ouput_2MB.pt --loop 5 > deepnvme-results-xfs/aio-load-gpu/deepnvme-aio-xfs-load-gpu-2-mb.txt 2>&1
+/home/z_ren/anaconda3/envs/deepspeed-inference/bin/python deepnvme/file_access/aio_load_gpu_tensor.py --input_file /mnt/nvmevirt/deepnvme/test_ouput_4MB.pt --loop 5 > deepnvme-results-xfs/aio-load-gpu/deepnvme-aio-xfs-load-gpu-4-mb.txt 2>&1
+/home/z_ren/anaconda3/envs/deepspeed-inference/bin/python deepnvme/file_access/aio_load_gpu_tensor.py --input_file /mnt/nvmevirt/deepnvme/test_ouput_8MB.pt --loop 5 > deepnvme-results-xfs/aio-load-gpu/deepnvme-aio-xfs-load-gpu-8-mb.txt 2>&1
+/home/z_ren/anaconda3/envs/deepspeed-inference/bin/python deepnvme/file_access/aio_load_gpu_tensor.py --input_file /mnt/nvmevirt/deepnvme/test_ouput_16MB.pt --loop 5 > deepnvme-results-xfs/aio-load-gpu/deepnvme-aio-xfs-load-gpu-16-mb.txt 2>&1
+/home/z_ren/anaconda3/envs/deepspeed-inference/bin/python deepnvme/file_access/aio_load_gpu_tensor.py --input_file /mnt/nvmevirt/deepnvme/test_ouput_32MB.pt --loop 5 > deepnvme-results-xfs/aio-load-gpu/deepnvme-aio-xfs-load-gpu-32-mb.txt 2>&1
+/home/z_ren/anaconda3/envs/deepspeed-inference/bin/python deepnvme/file_access/aio_load_gpu_tensor.py --input_file /mnt/nvmevirt/deepnvme/test_ouput_64MB.pt --loop 5 > deepnvme-results-xfs/aio-load-gpu/deepnvme-aio-xfs-load-gpu-64-mb.txt 2>&1
+/home/z_ren/anaconda3/envs/deepspeed-inference/bin/python deepnvme/file_access/aio_load_gpu_tensor.py --input_file /mnt/nvmevirt/deepnvme/test_ouput_128MB.pt --loop 5 > deepnvme-results-xfs/aio-load-gpu/deepnvme-aio-xfs-load-gpu-128-mb.txt 2>&1
+/home/z_ren/anaconda3/envs/deepspeed-inference/bin/python deepnvme/file_access/aio_load_gpu_tensor.py --input_file /mnt/nvmevirt/deepnvme/test_ouput_256MB.pt --loop 5 > deepnvme-results-xfs/aio-load-gpu/deepnvme-aio-xfs-load-gpu-256-mb.txt 2>&1
+/home/z_ren/anaconda3/envs/deepspeed-inference/bin/python deepnvme/file_access/aio_load_gpu_tensor.py --input_file /mnt/nvmevirt/deepnvme/test_ouput_512MB.pt --loop 5 > deepnvme-results-xfs/aio-load-gpu/deepnvme-aio-xfs-load-gpu-512-mb.txt 2>&1
+/home/z_ren/anaconda3/envs/deepspeed-inference/bin/python deepnvme/file_access/aio_load_gpu_tensor.py --input_file /mnt/nvmevirt/deepnvme/test_ouput_1024MB.pt --loop 5 > deepnvme-results-xfs/aio-load-gpu/deepnvme-aio-xfs-load-gpu-1024-mb.txt 2>&1
+/home/z_ren/anaconda3/envs/deepspeed-inference/bin/python deepnvme/file_access/aio_load_gpu_tensor.py --input_file /mnt/nvmevirt/deepnvme/test_ouput_2048MB.pt --loop 5 > deepnvme-results-xfs/aio-load-gpu/deepnvme-aio-xfs-load-gpu-2048-mb.txt 2>&1
+/home/z_ren/anaconda3/envs/deepspeed-inference/bin/python deepnvme/file_access/aio_load_gpu_tensor.py --input_file /mnt/nvmevirt/deepnvme/test_ouput_4096MB.pt --loop 5 > deepnvme-results-xfs/aio-load-gpu/deepnvme-aio-xfs-load-gpu-4096-mb.txt 2>&1

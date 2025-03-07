@@ -1,0 +1,4 @@
+sudo systemd-run --scope --property=MemoryLimit=10G /home/z_ren/anaconda3/envs/flexgen/bin/python3 -m flexllmgen.flex_opt --model facebook/opt-6.7b --path _DUMMY_ --offload-dir /mnt/nvmevirt/flexgen-offload --prompt-len 256 --gen-len 256 --num-gpu-batches 1 --percent 100 0 0 0 100 0 --gpu-batch-size 64 > flexgen-kv-offload-opt-6.7b-bs-64-ext4-trace/opt-6.7b-kv-offload-bs-64-ext4.txt 2>&1
+nvidia-smi --query-gpu=timestamp,utilization.gpu --format=csv -lms 200 > flexgen-kv-offload-opt-6.7b-bs-64-ext4-trace/opt-6.7b-kv-offload-bs-64-ext4-gpu.txt 2>&1
+sudo bpftrace ../bpftrace-scripts/bio-bite-size.bt > flexgen-kv-offload-opt-6.7b-bs-64-ext4-trace/opt-6.7b-kv-offload-bs-64-ext4-bpftrace-block.txt 2>&1
+sudo kill 50377

@@ -1,0 +1,281 @@
+[2025-01-21 01:31:54,963] [INFO] [real_accelerator.py:219:get_accelerator] Setting ds_accelerator to cuda (auto detect)
+/home/z_ren/anaconda3/envs/deepspeed-inference/lib/python3.11/site-packages/transformers/utils/generic.py:260: FutureWarning: `torch.utils._pytree._register_pytree_node` is deprecated. Please use `torch.utils._pytree.register_pytree_node` instead.
+  torch.utils._pytree._register_pytree_node(
+/home/z_ren/anaconda3/envs/deepspeed-inference/lib/python3.11/site-packages/transformers/utils/generic.py:260: FutureWarning: `torch.utils._pytree._register_pytree_node` is deprecated. Please use `torch.utils._pytree.register_pytree_node` instead.
+  torch.utils._pytree._register_pytree_node(
+[2025-01-21 01:31:57,134] [WARNING] [runner.py:215:fetch_hostfile] Unable to find hostfile, will proceed with training with local resources only.
+[2025-01-21 01:31:57,134] [INFO] [runner.py:607:main] cmd = /home/z_ren/anaconda3/envs/deepspeed-inference/bin/python -u -m deepspeed.launcher.launch --world_info=eyJsb2NhbGhvc3QiOiBbMF19 --master_addr=127.0.0.1 --master_port=29500 --enable_each_rank_log=None run_model.py --dummy --model facebook/opt-13b --cpu-offload --disk-offload --offload-dir /mnt/nvmevirt/deepspeed-offload --prompt-len 256 --gen-len 32 --loops 1 --batch-size 1
+[2025-01-21 01:31:58,856] [INFO] [real_accelerator.py:219:get_accelerator] Setting ds_accelerator to cuda (auto detect)
+/home/z_ren/anaconda3/envs/deepspeed-inference/lib/python3.11/site-packages/transformers/utils/generic.py:260: FutureWarning: `torch.utils._pytree._register_pytree_node` is deprecated. Please use `torch.utils._pytree.register_pytree_node` instead.
+  torch.utils._pytree._register_pytree_node(
+/home/z_ren/anaconda3/envs/deepspeed-inference/lib/python3.11/site-packages/transformers/utils/generic.py:260: FutureWarning: `torch.utils._pytree._register_pytree_node` is deprecated. Please use `torch.utils._pytree.register_pytree_node` instead.
+  torch.utils._pytree._register_pytree_node(
+[2025-01-21 01:32:00,965] [INFO] [launch.py:146:main] WORLD INFO DICT: {'localhost': [0]}
+[2025-01-21 01:32:00,965] [INFO] [launch.py:152:main] nnodes=1, num_local_procs=1, node_rank=0
+[2025-01-21 01:32:00,965] [INFO] [launch.py:163:main] global_rank_mapping=defaultdict(<class 'list'>, {'localhost': [0]})
+[2025-01-21 01:32:00,965] [INFO] [launch.py:164:main] dist_world_size=1
+[2025-01-21 01:32:00,965] [INFO] [launch.py:168:main] Setting CUDA_VISIBLE_DEVICES=0
+[2025-01-21 01:32:00,965] [INFO] [launch.py:256:main] process 5086 spawned with command: ['/home/z_ren/anaconda3/envs/deepspeed-inference/bin/python', '-u', 'run_model.py', '--local_rank=0', '--dummy', '--model', 'facebook/opt-13b', '--cpu-offload', '--disk-offload', '--offload-dir', '/mnt/nvmevirt/deepspeed-offload', '--prompt-len', '256', '--gen-len', '32', '--loops', '1', '--batch-size', '1']
+[2025-01-21 01:32:02,679] [INFO] [real_accelerator.py:219:get_accelerator] Setting ds_accelerator to cuda (auto detect)
+/home/z_ren/anaconda3/envs/deepspeed-inference/lib/python3.11/site-packages/transformers/utils/generic.py:260: FutureWarning: `torch.utils._pytree._register_pytree_node` is deprecated. Please use `torch.utils._pytree.register_pytree_node` instead.
+  torch.utils._pytree._register_pytree_node(
+/home/z_ren/anaconda3/envs/deepspeed-inference/lib/python3.11/site-packages/transformers/utils/generic.py:260: FutureWarning: `torch.utils._pytree._register_pytree_node` is deprecated. Please use `torch.utils._pytree.register_pytree_node` instead.
+  torch.utils._pytree._register_pytree_node(
+[2025-01-21 01:32:04,997] [INFO] [comm.py:652:init_distributed] cdb=None
+[2025-01-21 01:32:04,998] [INFO] [comm.py:683:init_distributed] Initializing TorchBackend in DeepSpeed with backend nccl
+/home/z_ren/anaconda3/envs/deepspeed-inference/lib/python3.11/site-packages/huggingface_hub/file_download.py:795: FutureWarning: `resume_download` is deprecated and will be removed in version 1.0.0. Downloads always resume when possible. If you want to force a new download, use `force_download=True`.
+  warnings.warn(
+load model
+[2025-01-21 01:32:05,629] [INFO] [config.py:733:__init__] Config mesh_device None world_size = 1
+[2025-01-21 01:32:25,624] [INFO] [utils.py:30:print_object] AsyncPartitionedParameterSwapper:
+[2025-01-21 01:32:25,624] [INFO] [utils.py:34:print_object]   aio_config ................... {'block_size': 16777216, 'queue_depth': 64, 'thread_count': 8, 'single_submit': False, 'overlap_events': True, 'use_gds': False}
+[2025-01-21 01:32:25,624] [INFO] [utils.py:34:print_object]   aio_handle ................... <class 'async_io.aio_handle'>
+[2025-01-21 01:32:25,624] [INFO] [utils.py:34:print_object]   aligned_bytes ................ 8192
+[2025-01-21 01:32:25,624] [INFO] [utils.py:34:print_object]   aligned_elements_per_buffer .. 2147483648
+[2025-01-21 01:32:25,624] [INFO] [utils.py:34:print_object]   available_buffer_ids ......... [0, 1, 2, 3, 4]
+[2025-01-21 01:32:25,624] [INFO] [utils.py:34:print_object]   available_numel .............. 0
+[2025-01-21 01:32:25,624] [INFO] [utils.py:34:print_object]   available_params ............. set()
+[2025-01-21 01:32:25,624] [INFO] [utils.py:34:print_object]   dtype ........................ torch.float16
+[2025-01-21 01:32:25,624] [INFO] [utils.py:34:print_object]   elements_per_buffer .......... 2147483648
+[2025-01-21 01:32:25,624] [INFO] [utils.py:34:print_object]   id_to_path ................... {}
+[2025-01-21 01:32:25,625] [INFO] [utils.py:34:print_object]   inflight_numel ............... 0
+[2025-01-21 01:32:25,625] [INFO] [utils.py:34:print_object]   inflight_params .............. []
+[2025-01-21 01:32:25,625] [INFO] [utils.py:34:print_object]   inflight_swap_in_buffers ..... []
+[2025-01-21 01:32:25,625] [INFO] [utils.py:34:print_object]   invalid_buffer ............... 1.0
+[2025-01-21 01:32:25,625] [INFO] [utils.py:34:print_object]   min_aio_bytes ................ 16777216
+[2025-01-21 01:32:25,626] [INFO] [utils.py:34:print_object]   numel_alignment .............. 4096
+[2025-01-21 01:32:25,626] [INFO] [utils.py:34:print_object]   param_buffer_count ........... 5
+[2025-01-21 01:32:25,626] [INFO] [utils.py:34:print_object]   param_id_to_buffer_id ........ {}
+[2025-01-21 01:32:25,626] [INFO] [utils.py:34:print_object]   param_id_to_numel ............ {}
+[2025-01-21 01:32:25,626] [INFO] [utils.py:34:print_object]   param_id_to_swap_buffer ...... {}
+[2025-01-21 01:32:25,626] [INFO] [utils.py:34:print_object]   partitioned_swap_buffer ...... None
+[2025-01-21 01:32:25,626] [INFO] [utils.py:34:print_object]   partitioned_swap_pool ........ None
+[2025-01-21 01:32:25,626] [INFO] [utils.py:34:print_object]   pending_reads ................ 0
+[2025-01-21 01:32:25,626] [INFO] [utils.py:34:print_object]   pending_writes ............... 0
+[2025-01-21 01:32:25,626] [INFO] [utils.py:34:print_object]   reserved_buffer_ids .......... []
+[2025-01-21 01:32:25,626] [INFO] [utils.py:34:print_object]   swap_config .................. device='nvme' nvme_path=PosixPath('/mnt/nvmevirt/deepspeed-offload') buffer_count=5 buffer_size=2147483648 max_in_cpu=1000000000 pin_memory=False
+[2025-01-21 01:32:25,627] [INFO] [utils.py:34:print_object]   swap_element_size ............ 2
+[2025-01-21 01:32:25,627] [INFO] [utils.py:34:print_object]   swap_folder .................. /mnt/nvmevirt/deepspeed-offload/zero_stage_3/float16params/rank0
+[2025-01-21 01:32:25,627] [INFO] [utils.py:34:print_object]   swap_out_params .............. []
+[2025-01-21 01:32:25,627] [INFO] [utils.py:34:print_object]   use_gds ...................... False
+[2025-01-21 01:32:34,069] [INFO] [partition_parameters.py:348:__exit__] finished initializing model - num_params = 645, num_elems = 13.11B
+Loading checkpoint shards:   0%|          | 0/3 [00:00<?, ?it/s]/home/z_ren/anaconda3/envs/deepspeed-inference/lib/python3.11/site-packages/transformers/modeling_utils.py:488: FutureWarning: You are using `torch.load` with `weights_only=False` (the current default value), which uses the default pickle module implicitly. It is possible to construct malicious pickle data which will execute arbitrary code during unpickling (See https://github.com/pytorch/pytorch/blob/main/SECURITY.md#untrusted-models for more details). In a future release, the default value for `weights_only` will be flipped to `True`. This limits the functions that could be executed during unpickling. Arbitrary objects will no longer be allowed to be loaded via this mode unless they are explicitly allowlisted by the user via `torch.serialization.add_safe_globals`. We recommend you start setting `weights_only=True` for any use case where you don't have full control of the loaded file. Please open an issue on GitHub for any issues related to this experimental feature.
+  return torch.load(checkpoint_file, map_location=map_location)
+Loading checkpoint shards:  33%|███▎      | 1/3 [00:14<00:28, 14.21s/it]Loading checkpoint shards:  67%|██████▋   | 2/3 [00:27<00:13, 13.95s/it]Loading checkpoint shards: 100%|██████████| 3/3 [00:37<00:00, 12.15s/it]Loading checkpoint shards: 100%|██████████| 3/3 [00:37<00:00, 12.66s/it]
+[2025-01-21 01:33:12,132] [INFO] [logging.py:128:log_dist] [Rank 0] DeepSpeed info: version=0.16.1, git-hash=unknown, git-branch=unknown
+[2025-01-21 01:33:12,132] [INFO] [config.py:733:__init__] Config mesh_device None world_size = 1
+[2025-01-21 01:33:12,144] [INFO] [logging.py:128:log_dist] [Rank 0] DeepSpeed Flops Profiler Enabled: False
+[2025-01-21 01:33:12,146] [INFO] [logging.py:128:log_dist] [Rank 0] Creating ZeRO Offload
+[2025-01-21 01:33:12,254] [INFO] [utils.py:781:see_memory_usage] DeepSpeedZeRoOffload initialize [begin]
+[2025-01-21 01:33:12,255] [INFO] [utils.py:782:see_memory_usage] MA 0.0 GB         Max_MA 0.96 GB         CA 0.96 GB         Max_CA 1 GB 
+[2025-01-21 01:33:12,255] [INFO] [utils.py:789:see_memory_usage] CPU Virtual Memory:  used = 36.01 GB, percent = 57.3%
+Parameter Offload: Total persistent parameters: 1853440 in 362 params
+[2025-01-21 01:33:12,401] [INFO] [utils.py:781:see_memory_usage] DeepSpeedZeRoOffload initialize [end]
+[2025-01-21 01:33:12,402] [INFO] [utils.py:782:see_memory_usage] MA 0.0 GB         Max_MA 0.0 GB         CA 0.96 GB         Max_CA 1 GB 
+[2025-01-21 01:33:12,402] [INFO] [utils.py:789:see_memory_usage] CPU Virtual Memory:  used = 36.01 GB, percent = 57.3%
+[2025-01-21 01:33:12,403] [INFO] [config.py:999:print] DeepSpeedEngine configuration:
+[2025-01-21 01:33:12,403] [INFO] [config.py:1003:print]   activation_checkpointing_config  {
+    "partition_activations": false, 
+    "contiguous_memory_optimization": false, 
+    "cpu_checkpointing": false, 
+    "number_checkpoints": null, 
+    "synchronize_checkpoint_boundary": false, 
+    "profile": false
+}
+[2025-01-21 01:33:12,403] [INFO] [config.py:1003:print]   aio_config ................... {'block_size': 16777216, 'queue_depth': 64, 'thread_count': 8, 'single_submit': False, 'overlap_events': True, 'use_gds': False}
+[2025-01-21 01:33:12,404] [INFO] [config.py:1003:print]   amp_enabled .................. False
+[2025-01-21 01:33:12,404] [INFO] [config.py:1003:print]   amp_params ................... False
+[2025-01-21 01:33:12,404] [INFO] [config.py:1003:print]   autotuning_config ............ {
+    "enabled": false, 
+    "start_step": null, 
+    "end_step": null, 
+    "metric_path": null, 
+    "arg_mappings": null, 
+    "metric": "throughput", 
+    "model_info": null, 
+    "results_dir": "autotuning_results", 
+    "exps_dir": "autotuning_exps", 
+    "overwrite": true, 
+    "fast": true, 
+    "start_profile_step": 3, 
+    "end_profile_step": 5, 
+    "tuner_type": "gridsearch", 
+    "tuner_early_stopping": 5, 
+    "tuner_num_trials": 50, 
+    "model_info_path": null, 
+    "mp_size": 1, 
+    "max_train_batch_size": null, 
+    "min_train_batch_size": 1, 
+    "max_train_micro_batch_size_per_gpu": 1.024000e+03, 
+    "min_train_micro_batch_size_per_gpu": 1, 
+    "num_tuning_micro_batch_sizes": 3
+}
+[2025-01-21 01:33:12,404] [INFO] [config.py:1003:print]   bfloat16_enabled ............. False
+[2025-01-21 01:33:12,404] [INFO] [config.py:1003:print]   bfloat16_immediate_grad_update  False
+[2025-01-21 01:33:12,404] [INFO] [config.py:1003:print]   checkpoint_parallel_write_pipeline  False
+[2025-01-21 01:33:12,404] [INFO] [config.py:1003:print]   checkpoint_tag_validation_enabled  True
+[2025-01-21 01:33:12,404] [INFO] [config.py:1003:print]   checkpoint_tag_validation_fail  False
+[2025-01-21 01:33:12,404] [INFO] [config.py:1003:print]   comms_config ................. <deepspeed.comm.config.DeepSpeedCommsConfig object at 0x7be52409dd90>
+[2025-01-21 01:33:12,404] [INFO] [config.py:1003:print]   communication_data_type ...... None
+[2025-01-21 01:33:12,404] [INFO] [config.py:1003:print]   compression_config ........... {'weight_quantization': {'shared_parameters': {'enabled': False, 'quantizer_kernel': False, 'schedule_offset': 0, 'quantize_groups': 1, 'quantize_verbose': False, 'quantization_type': 'symmetric', 'quantize_weight_in_forward': False, 'rounding': 'nearest', 'fp16_mixed_quantize': False, 'quantize_change_ratio': 0.001}, 'different_groups': {}}, 'activation_quantization': {'shared_parameters': {'enabled': False, 'quantization_type': 'symmetric', 'range_calibration': 'dynamic', 'schedule_offset': 1000}, 'different_groups': {}}, 'sparse_pruning': {'shared_parameters': {'enabled': False, 'method': 'l1', 'schedule_offset': 1000}, 'different_groups': {}}, 'row_pruning': {'shared_parameters': {'enabled': False, 'method': 'l1', 'schedule_offset': 1000}, 'different_groups': {}}, 'head_pruning': {'shared_parameters': {'enabled': False, 'method': 'topk', 'schedule_offset': 1000}, 'different_groups': {}}, 'channel_pruning': {'shared_parameters': {'enabled': False, 'method': 'l1', 'schedule_offset': 1000}, 'different_groups': {}}, 'layer_reduction': {'enabled': False}}
+[2025-01-21 01:33:12,404] [INFO] [config.py:1003:print]   curriculum_enabled_legacy .... False
+[2025-01-21 01:33:12,404] [INFO] [config.py:1003:print]   curriculum_params_legacy ..... False
+[2025-01-21 01:33:12,404] [INFO] [config.py:1003:print]   data_efficiency_config ....... {'enabled': False, 'seed': 1234, 'data_sampling': {'enabled': False, 'num_epochs': 1000, 'num_workers': 0, 'curriculum_learning': {'enabled': False}}, 'data_routing': {'enabled': False, 'random_ltd': {'enabled': False, 'layer_token_lr_schedule': {'enabled': False}}}}
+[2025-01-21 01:33:12,404] [INFO] [config.py:1003:print]   data_efficiency_enabled ...... False
+[2025-01-21 01:33:12,404] [INFO] [config.py:1003:print]   dataloader_drop_last ......... False
+[2025-01-21 01:33:12,404] [INFO] [config.py:1003:print]   disable_allgather ............ False
+[2025-01-21 01:33:12,404] [INFO] [config.py:1003:print]   dump_state ................... False
+[2025-01-21 01:33:12,404] [INFO] [config.py:1003:print]   dynamic_loss_scale_args ...... None
+[2025-01-21 01:33:12,404] [INFO] [config.py:1003:print]   eigenvalue_enabled ........... False
+[2025-01-21 01:33:12,404] [INFO] [config.py:1003:print]   eigenvalue_gas_boundary_resolution  1
+[2025-01-21 01:33:12,404] [INFO] [config.py:1003:print]   eigenvalue_layer_name ........ bert.encoder.layer
+[2025-01-21 01:33:12,404] [INFO] [config.py:1003:print]   eigenvalue_layer_num ......... 0
+[2025-01-21 01:33:12,404] [INFO] [config.py:1003:print]   eigenvalue_max_iter .......... 100
+[2025-01-21 01:33:12,404] [INFO] [config.py:1003:print]   eigenvalue_stability ......... 1e-06
+[2025-01-21 01:33:12,404] [INFO] [config.py:1003:print]   eigenvalue_tol ............... 0.01
+[2025-01-21 01:33:12,404] [INFO] [config.py:1003:print]   eigenvalue_verbose ........... False
+[2025-01-21 01:33:12,404] [INFO] [config.py:1003:print]   elasticity_enabled ........... False
+[2025-01-21 01:33:12,404] [INFO] [config.py:1003:print]   flops_profiler_config ........ {
+    "enabled": false, 
+    "recompute_fwd_factor": 0.0, 
+    "profile_step": 1, 
+    "module_depth": -1, 
+    "top_modules": 1, 
+    "detailed": true, 
+    "output_file": null
+}
+[2025-01-21 01:33:12,404] [INFO] [config.py:1003:print]   fp16_auto_cast ............... False
+[2025-01-21 01:33:12,404] [INFO] [config.py:1003:print]   fp16_enabled ................. True
+[2025-01-21 01:33:12,404] [INFO] [config.py:1003:print]   fp16_master_weights_and_gradients  False
+[2025-01-21 01:33:12,405] [INFO] [config.py:1003:print]   global_rank .................. 0
+[2025-01-21 01:33:12,405] [INFO] [config.py:1003:print]   grad_accum_dtype ............. None
+[2025-01-21 01:33:12,405] [INFO] [config.py:1003:print]   gradient_accumulation_steps .. 1
+[2025-01-21 01:33:12,405] [INFO] [config.py:1003:print]   gradient_clipping ............ 0.0
+[2025-01-21 01:33:12,405] [INFO] [config.py:1003:print]   gradient_predivide_factor .... 1.0
+[2025-01-21 01:33:12,405] [INFO] [config.py:1003:print]   graph_harvesting ............. False
+[2025-01-21 01:33:12,405] [INFO] [config.py:1003:print]   hybrid_engine ................ enabled=False max_out_tokens=512 inference_tp_size=1 release_inference_cache=False pin_parameters=True tp_gather_partition_size=8
+[2025-01-21 01:33:12,405] [INFO] [config.py:1003:print]   initial_dynamic_scale ........ 65536
+[2025-01-21 01:33:12,405] [INFO] [config.py:1003:print]   load_universal_checkpoint .... False
+[2025-01-21 01:33:12,405] [INFO] [config.py:1003:print]   loss_scale ................... 0
+[2025-01-21 01:33:12,405] [INFO] [config.py:1003:print]   memory_breakdown ............. False
+[2025-01-21 01:33:12,405] [INFO] [config.py:1003:print]   mics_hierarchial_params_gather  False
+[2025-01-21 01:33:12,405] [INFO] [config.py:1003:print]   mics_shard_size .............. -1
+[2025-01-21 01:33:12,405] [INFO] [config.py:1003:print]   monitor_config ............... tensorboard=TensorBoardConfig(enabled=False, output_path='', job_name='DeepSpeedJobName') comet=CometConfig(enabled=False, samples_log_interval=100, project=None, workspace=None, api_key=None, experiment_name=None, experiment_key=None, online=None, mode=None) wandb=WandbConfig(enabled=False, group=None, team=None, project='deepspeed') csv_monitor=CSVConfig(enabled=False, output_path='', job_name='DeepSpeedJobName')
+[2025-01-21 01:33:12,405] [INFO] [config.py:1003:print]   nebula_config ................ {
+    "enabled": false, 
+    "persistent_storage_path": null, 
+    "persistent_time_interval": 100, 
+    "num_of_version_in_retention": 2, 
+    "enable_nebula_load": true, 
+    "load_path": null
+}
+[2025-01-21 01:33:12,405] [INFO] [config.py:1003:print]   optimizer_legacy_fusion ...... False
+[2025-01-21 01:33:12,405] [INFO] [config.py:1003:print]   optimizer_name ............... None
+[2025-01-21 01:33:12,405] [INFO] [config.py:1003:print]   optimizer_params ............. None
+[2025-01-21 01:33:12,405] [INFO] [config.py:1003:print]   pipeline ..................... {'stages': 'auto', 'partition': 'best', 'seed_layers': False, 'activation_checkpoint_interval': 0, 'pipe_partitioned': True, 'grad_partitioned': True}
+[2025-01-21 01:33:12,405] [INFO] [config.py:1003:print]   pld_enabled .................. False
+[2025-01-21 01:33:12,405] [INFO] [config.py:1003:print]   pld_params ................... False
+[2025-01-21 01:33:12,405] [INFO] [config.py:1003:print]   prescale_gradients ........... False
+[2025-01-21 01:33:12,405] [INFO] [config.py:1003:print]   scheduler_name ............... None
+[2025-01-21 01:33:12,405] [INFO] [config.py:1003:print]   scheduler_params ............. None
+[2025-01-21 01:33:12,405] [INFO] [config.py:1003:print]   seq_parallel_communication_data_type  torch.float32
+[2025-01-21 01:33:12,405] [INFO] [config.py:1003:print]   sparse_attention ............. None
+[2025-01-21 01:33:12,405] [INFO] [config.py:1003:print]   sparse_gradients_enabled ..... False
+[2025-01-21 01:33:12,405] [INFO] [config.py:1003:print]   steps_per_print .............. 2000
+[2025-01-21 01:33:12,405] [INFO] [config.py:1003:print]   timers_config ................ enabled=True synchronized=True
+[2025-01-21 01:33:12,405] [INFO] [config.py:1003:print]   train_batch_size ............. 1
+[2025-01-21 01:33:12,405] [INFO] [config.py:1003:print]   train_micro_batch_size_per_gpu  1
+[2025-01-21 01:33:12,405] [INFO] [config.py:1003:print]   use_data_before_expert_parallel_  False
+[2025-01-21 01:33:12,405] [INFO] [config.py:1003:print]   use_node_local_storage ....... False
+[2025-01-21 01:33:12,405] [INFO] [config.py:1003:print]   wall_clock_breakdown ......... False
+[2025-01-21 01:33:12,405] [INFO] [config.py:1003:print]   weight_quantization_config ... None
+[2025-01-21 01:33:12,405] [INFO] [config.py:1003:print]   world_size ................... 1
+[2025-01-21 01:33:12,405] [INFO] [config.py:1003:print]   zero_allow_untested_optimizer  False
+[2025-01-21 01:33:12,405] [INFO] [config.py:1003:print]   zero_config .................. stage=3 contiguous_gradients=True reduce_scatter=True reduce_bucket_size=500000000 use_multi_rank_bucket_allreduce=True allgather_partitions=True allgather_bucket_size=500000000 overlap_comm=True load_from_fp32_weights=True elastic_checkpoint=False offload_param=DeepSpeedZeroOffloadParamConfig(device='nvme', nvme_path=PosixPath('/mnt/nvmevirt/deepspeed-offload'), buffer_count=5, buffer_size=2147483648, max_in_cpu=1000000000, pin_memory=False) offload_optimizer=None sub_group_size=1000000000 cpu_offload_param=None cpu_offload_use_pin_memory=None cpu_offload=None prefetch_bucket_size=52428800 param_persistence_threshold=5120 model_persistence_threshold=9223372036854775807 max_live_parameters=52428800 max_reuse_distance=1000000000 gather_16bit_weights_on_model_save=False module_granularity_threshold=0 use_all_reduce_for_fetch_params=False stage3_gather_fp16_weights_on_model_save=False ignore_unused_parameters=True legacy_stage1=False round_robin_gradients=False zero_hpz_partition_size=1 zero_quantized_weights=False zero_quantized_nontrainable_weights=False zero_quantized_gradients=False mics_shard_size=-1 mics_hierarchical_params_gather=False memory_efficient_linear=True pipeline_loading_checkpoint=False override_module_apply=True
+[2025-01-21 01:33:12,405] [INFO] [config.py:1003:print]   zero_enabled ................. True
+[2025-01-21 01:33:12,405] [INFO] [config.py:1003:print]   zero_force_ds_cpu_optimizer .. True
+[2025-01-21 01:33:12,405] [INFO] [config.py:1003:print]   zero_optimization_stage ...... 3
+[2025-01-21 01:33:12,406] [INFO] [config.py:989:print_user_config]   json = {
+    "fp16": {
+        "enabled": true
+    }, 
+    "bf16": {
+        "enabled": false
+    }, 
+    "zero_optimization": {
+        "stage": 3, 
+        "stage3_prefetch_bucket_size": 5.242880e+07, 
+        "stage3_param_persistence_threshold": 5.120000e+03, 
+        "stage3_max_live_parameters": 5.242880e+07, 
+        "offload_param": {
+            "device": "nvme", 
+            "pin_memory": false, 
+            "nvme_path": "/mnt/nvmevirt/deepspeed-offload", 
+            "buffer_count": 5, 
+            "buffer_size": 2.147484e+09
+        }
+    }, 
+    "steps_per_print": 2.000000e+03, 
+    "train_batch_size": 1, 
+    "wall_clock_breakdown": false, 
+    "aio": {
+        "block_size": 1.677722e+07, 
+        "queue_depth": 64, 
+        "thread_count": 8, 
+        "use_gds": false, 
+        "single_submit": false, 
+        "overlap_events": true
+    }
+}
+model.config = OPTConfig {
+  "_name_or_path": "/mnt/nvmevirt/deepspeed-offload/facebook-opt-13b-hf-weights/",
+  "_remove_final_layer_norm": false,
+  "activation_dropout": 0.0,
+  "activation_function": "relu",
+  "architectures": [
+    "OPTForCausalLM"
+  ],
+  "attention_dropout": 0.0,
+  "bos_token_id": 2,
+  "do_layer_norm_before": true,
+  "dropout": 0.1,
+  "enable_bias": true,
+  "eos_token_id": 2,
+  "ffn_dim": 20480,
+  "hidden_size": 5120,
+  "init_std": 0.02,
+  "layer_norm_elementwise_affine": true,
+  "layerdrop": 0.0,
+  "max_position_embeddings": 2048,
+  "model_type": "opt",
+  "num_attention_heads": 40,
+  "num_hidden_layers": 40,
+  "output_projection": true,
+  "pad_token_id": 1,
+  "prefix": "</s>",
+  "torch_dtype": "float32",
+  "transformers_version": "4.33.0.dev0",
+  "use_cache": true,
+  "vocab_size": 50272,
+  "word_embed_proj_dim": 5120
+}
+
+benchmark, prompt_len = 256, execute_gen_len = 32, input_ids.shape = torch.Size([1, 256])
+token_latency=[5.980829477310181, 3.8027713298797607, 3.731694221496582, 3.7299296855926514, 3.740642786026001, 3.743439197540283, 3.729196071624756, 3.7393856048583984, 3.7477071285247803, 3.7337090969085693, 3.2695133686065674, 3.10703706741333, 3.1051793098449707, 3.1213090419769287, 3.1031992435455322, 3.1134557723999023, 3.4648120403289795, 3.1231203079223633, 3.1148297786712646, 3.124779462814331, 3.1132094860076904, 3.114630699157715, 3.112985372543335, 3.1231212615966797, 3.1213812828063965, 3.1267898082733154, 3.1121439933776855, 3.1127922534942627, 3.1128454208374023, 3.358367919921875, 3.4333550930023193, 3.153639316558838]
+Summary:
+costs = [109.42767519500012], prefill_timings = [5.979846954345703]
+Outputs:
+----------------------------------------------------------------------
+0: Paris is the capital city of<s><s><s><s><s><s><s><s><s><s><s><s><s><s><s><s><s><s><s><s><s><s><s><s><s><s><s><s><s><s><s><s>
+----------------------------------------------------------------------
+0: Paris is the capital city of<s><s><s><s><s><s><s><s><s><s><s><s><s><s><s><s><s><s><s><s><s><s><s><s><s><s><s><s><s><s><s><s>
+----------------------------------------------------------------------
+0: Paris is the capital city of<s><s><s><s><s><s><s><s><s><s><s><s><s><s><s><s><s><s><s><s><s><s><s><s><s><s><s><s><s><s><s><s>
+----------------------------------------------------------------------
+
+model size: 23.921 GB	cache size: 0.220 GB	hidden size (p): 0.003 GB
+peak gpu mem: 0.929 GB	prefill latency: 5.980 s	prefill throughput: 42.810 token/s
+decode latency: 103.448 s	decode throughput: 0.300 token/s
+total latency: 109.428 s	total throughput: 0.292 token/s
+[rank0]:[W121 01:35:02.130459552 ProcessGroupNCCL.cpp:1250] Warning: WARNING: process group has NOT been destroyed before we destruct ProcessGroupNCCL. On normal program exit, the application should call destroy_process_group to ensure that any pending NCCL operations have finished in this process. In rare cases this process can exit before this point and block the progress of another member of the process group. This constraint has always been present,  but this warning has only been added since PyTorch 2.4 (function operator())
+[2025-01-21 01:35:15,998] [INFO] [launch.py:351:main] Process 5086 exits successfully.

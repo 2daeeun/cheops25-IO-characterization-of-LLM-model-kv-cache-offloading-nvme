@@ -1,0 +1,14 @@
+[2025-01-20 15:25:07,840] [INFO] [real_accelerator.py:219:get_accelerator] Setting ds_accelerator to cuda (auto detect)
+/home/z_ren/anaconda3/envs/deepspeed-inference/lib/python3.11/site-packages/transformers/utils/generic.py:260: FutureWarning: `torch.utils._pytree._register_pytree_node` is deprecated. Please use `torch.utils._pytree.register_pytree_node` instead.
+  torch.utils._pytree._register_pytree_node(
+/home/z_ren/anaconda3/envs/deepspeed-inference/lib/python3.11/site-packages/transformers/utils/generic.py:260: FutureWarning: `torch.utils._pytree._register_pytree_node` is deprecated. Please use `torch.utils._pytree.register_pytree_node` instead.
+  torch.utils._pytree._register_pytree_node(
+Using /home/z_ren/.cache/torch_extensions/py311_cu124 as PyTorch extensions root...
+Emitting ninja build file /home/z_ren/.cache/torch_extensions/py311_cu124/async_io/build.ninja...
+Building extension module async_io...
+Allowing ninja to set a default number of workers... (overridable by setting the environment variable MAX_JOBS=N)
+args = Namespace(input_file='/mnt/nvmevirt/deepnvme/test_ouput_2MB.pt', loop=5, validate=False)
+ninja: no work to do.
+Loading extension module async_io...
+Time to load async_io op: 2.2782604694366455 seconds
+aio load_gpu: 0.001953125 GB, 0.0007732430000032764 secs,  2.53 GB/sec

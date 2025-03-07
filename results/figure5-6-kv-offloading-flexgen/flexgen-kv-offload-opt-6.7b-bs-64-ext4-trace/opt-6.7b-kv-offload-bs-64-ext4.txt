@@ -1,0 +1,17 @@
+Running scope as unit: run-rfc7e82ad1f134c8589cc2f9847014533.scope
+/home/z_ren/anaconda3/envs/flexgen/lib/python3.11/site-packages/torch/__init__.py:1021: FutureWarning: `torch.distributed.reduce_op` is deprecated, please use `torch.distributed.ReduceOp` instead
+  return isinstance(obj, torch.Tensor)
+<run_flexllmgen>: args.model: facebook/opt-6.7b
+model size: 12.386 GB, cache size: 16.000 GB, hidden size (prefill): 0.250 GB
+init weight...
+warmup - generate
+benchmark - generate
+TorchDevice: cuda:0
+  cur_mem: 12.7939 GB,  peak_mem: 14.9540 GB
+TorchDevice: cpu
+  cur_mem: 0.0000 GB,  peak_mem: 0.0000 GB
+model size: 12.386 GB	cache size: 16.000 GB	hidden size (p): 0.250 GB
+peak gpu mem: 14.954 GB	projected: False
+prefill latency: 21.923 s	prefill throughput: 747.328 token/s
+decode latency: 1463.125 s	decode throughput: 11.154 token/s
+total latency: 1485.049 s	total throughput: 11.033 token/s

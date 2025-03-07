@@ -1,0 +1,4 @@
+/home/z_ren/anaconda3/envs/deepspeed-inference/bin/deepspeed --num_gpus 1 run_model.py --dummy --model facebook/opt-13b --cpu-offload  --disk-offload --offload-dir /mnt/nvmevirt/deepspeed-offload  --prompt-len 256 --gen-len 32 --loops 1 --batch-size 1  >> deepspeed-model-offloading-opt-13b-bs-1-ext4-trace/opt-13b-model-offload-bs-1-ext4.txt 2>&1
+nvidia-smi --query-gpu=timestamp,utilization.gpu --format=csv -lms 200 > deepspeed-model-offloading-opt-13b-bs-1-ext4-trace/opt-13b-model-offload-bs-1-ext4-gpu.txt 2>&1
+sudo bpftrace ../bpftrace-scripts/bio-bite-size.bt > deepspeed-model-offloading-opt-13b-bs-1-ext4-trace/opt-13b-model-offload-bs-1-ext4-bpftrace-block.txt 2>&1
+sudo kill 4973

@@ -1,0 +1,4 @@
+/home/z_ren/2025-cheops-ml-storage-code/deepnvme/deepnvme/file_access/py_load_gpu_tensor.py:7: UserWarning: The given buffer is not writable, and PyTorch does not support non-writable tensors. This means you can write to the underlying (supposedly non-writable) buffer using the tensor. You may want to copy the buffer to protect its data or make it writable before converting it to a tensor. This type of warning will be suppressed for the rest of this program. (Triggered internally at ../torch/csrc/utils/tensor_new.cpp:1560.)
+  tensor = torch.frombuffer(f.read(), dtype=torch.uint8)
+args = Namespace(input_file='/mnt/nvmevirt/deepnvme/test_ouput_4MB.pt', loop=5, validate=False)
+py load_gpu:  0.00390625 GB, 0.12976050360011868 secs,  0.03 GB/sec

@@ -1,0 +1,4 @@
+sudo systemd-run --scope --property=MemoryLimit=10G /home/z_ren/anaconda3/envs/flexgen/bin/python3 -m flexllmgen.flex_opt --model facebook/opt-30b --path _DUMMY_ --offload-dir /mnt/nvmevirt/flexgen-offload --prompt-len 256 --gen-len 32 --num-gpu-batches 1 --percent 0 0 100 0 100 0 --gpu-batch-size 1 > flexgen-model-offload-opt30b-bs-1-ext4-trace/opt-30b-model-offload-bs-1-ext4.txt 2>&1
+nvidia-smi --query-gpu=timestamp,utilization.gpu --format=csv -lms 200 > flexgen-model-offload-opt30b-bs-1-ext4-trace/opt-30b-model-offload-bs-1-ext4-gpu.txt 2>&1
+sudo bpftrace ../bpftrace-scripts/bio-bite-size.bt > flexgen-model-offload-opt30b-bs-1-ext4-trace/opt-30b-model-offload-bs-1-ext4-bpftrace-block.txt 2>&1
+sudo kill 2490

@@ -1,0 +1,2 @@
+args = Namespace(nvme_folder='/mnt/nvmevirt/deepnvme', mb_size=32, loop=5, validate=False)
+py store_gpu: 0.03125 GB, 0.05979969079999137 secs,  0.52 GB/sec
