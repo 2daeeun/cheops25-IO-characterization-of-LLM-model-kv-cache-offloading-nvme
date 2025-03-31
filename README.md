@@ -57,7 +57,7 @@ tracepoint:block:block_rq_issue
 */
 ```
 
-[[출력예시 파일 보기]]()
+[[출력예시 파일 보기]](https://github.com/2daeeun/cheops25-IO-characterization-of-LLM-model-kv-cache-offloading-nvme/blob/main/results/figure5-6-kv-offloading-flexgen/flexgen-kv-offload-opt-6.7b-bs-64-ext4-trace/(%EC%98%88%EC%8B%9C)opt-13b-model-offload-bs-1-ext4-bpftrace-block.txt)
 
 <details>
 <summary>check major and minor 확인 방법 [접기/펼치기]</summary>
