@@ -1,162 +1,75 @@
-# [ARTIFACT] CHEOPS'25 An I/O Characterizing Study of Offloading LLM Models and KV Caches to NVMe SSD
+# 분석
 
-This repo is the artifact of CHEOPS'25 An I/O Characterizing Study of Offloading LLM Models and KV Caches to NVMe SSD.
+## 해당 논문에서의 실험 방법
+* 1단계: `OOO-trace.py`를 실행. (로그파일을 저장)
+* 2단계: `XXX-parse.py`를 실행. (로그파일을 그래프로 시각화)
 
-## Environment Setup
+---
+### OOO-trace.py의 실행 방법 예시
+```bash
+$ python3 deepspeed-opt-13b-io-trace-block.py --fs YOUR_FILE_SYSTEM --bs BATCH_SIZE
+$ 예) python3 deepspeed-opt-13b-io-trace-parse.py --fs ext4 --bs 1
+```
+BATCH_SIZE는 LLM 모델이 몇 번의 입력을 처리하는지에 대한 매게변수 입니다.
 
-Install conda
+---
+### OOO-trace.py를 실행해며며 생기는 로그 파일
+[[로그 파일들의 링크]](https://github.com/2daeeun/cheops25-IO-characterization-of-LLM-model-kv-cache-offloading-nvme/tree/main/results/figure5-6-kv-offloading-flexgen/flexgen-kv-offload-opt-6.7b-bs-64-ext4-trace)
+* **flexgen-opt-6.7b-kv-trace-ext4-bs-64-log.txt** 
+    - 파싱 명령어의 로그 파일
+* **opt-6.7b-kv-offload-bs-64-ext4.txt** [뭔지 잘 모름]
+    - 파싱 명령어의 로그 파일(?)
+* **opt-6.7b-kv-offload-bs-64-ext4-bpftrace-block.txt** [★ 필요]
+    - block I/O의 로그 파일
+* **opt-6.7b-kv-offload-bs-64-ext4-gpu.txt** 
+    - GPU 파싱 로그 파일
+
+---
+### opt-6.7b-kv-offload-bs-64-ext4-bpftrace-block.txt
+`OOO-trace.py` 파일에 있는는 해당 코드가 I/O 로그파일을 생성한다.
 
 ```bash
-wget https://repo.anaconda.com/archive/Anaconda3-2024.02-1-Linux-x86_64.sh
-chmod +x Anaconda3-2024.02-1-Linux-x86_64.sh 
-./Anaconda3-2024.02-1-Linux-x86_64.sh
-conda create --name llm-storage python=3.11.10
-conda install pip
-conda install -c conda-forge gcc=12.1.0
+sudo bpftrace ../bpftrace-scripts/bio-bite-size.bt > {results_file_bpftrace} 2>&1'
 ```
 
-Please refer to this link to install the CUDA driver: [https://docs.nvidia.com/cuda/archive/12.0.0/cuda-installation-guide-linux/index.html](https://docs.nvidia.com/cuda/archive/12.0.0/cuda-installation-guide-linux/index.html)
-
-### Install DeepSpeed
-
-Tutorial: [https://github.com/microsoft/DeepSpeedExamples/blob/master/inference/huggingface/zero_inference/README.md](https://github.com/microsoft/DeepSpeedExamples/blob/master/inference/huggingface/zero_inference/README.md)
-
+---
+### `bio-bite-size.bt`(bprface trace)에 대한 설명
 ```bash
-sudo apt install libaio-dev
-sudo apt install ninja-build
+// check major and minor: ls -l /dev/nvme0n1
 
-# create and activate the conda environment
+tracepoint:block:block_rq_issue
+/args->dev == ((259 << 20) | 4)/ // Match major=259, minor=4
+{
+    printf("%llu, %s, %d, %llu, %d\n", nsecs, args->rwbs, args->bytes, args->sector, args->nr_sector);
+}
 
-conda install python=3.11.10
-conda install pip
-export LD_LIBRARY_PATH=/usr/lib/x86_64-linux-gnu/:$LD_LIBRARY_PATH
-
-# Install the requirements from: https://github.com/microsoft/DeepSpeedExamples/blob/master/inference/huggingface/zero_inference/
-pip install -r requirements.txt
-
-# run ds_report to check if async_io is successfully installed
+/* 출력 예시
+45502109053447, W, 4096, 170104688, 8
+45502109071121, W, 4096, 170104864, 8
+45502109074148, W, 4096, 170105280, 8
+45502109076588, W, 4096, 170105744, 8
+    │           │    │       │      │
+    │           │    │       │      └──── args->nr_sector:  요청된 섹터의의 수
+    │           │    │       └─────────── args->sector:     I/O 요청이 시작되는 논리 섹터 번호
+    │           │    └─────────────────── args->bytes:      요청된 데이터 전송 바이트 수
+    │           └──────────────────────── args->rwbs:       I/O 요청의 종류 (R: 읽기, W: 쓰기)
+    └──────────────────────────────────── nsecs:            이벤트가 발생한 시간(나노초 단위)
+*/
 ```
 
+[[출력예시 파일 보기]]()
 
-### Install FlexGen
-
+<details>
+<summary>check major and minor 확인 방법 [접기/펼치기]</summary>
 ```bash
-conda create  --name flexgen
-conda activate flexgen
-conda install pip
-conda install python=3.11.10
-
-# Install pytorch, use nvidia-smi to check CUDA version. https://pytorch.org/get-started/locally/
-
-# Install flexgen: https://github.com/FMInference/FlexLLMGen?tab=readme-ov-file#installation
+$ ls -l /dev/sda
+$ brw-rw---- 1 root disk 8, 0  3월 30일  19:42 /dev/sda
+$ /args->dev == ((8 << 20) | 0)/
 ```
+</details>
 
-### bpftrace setup
 
-bpftrace install tutorial: https://github.com/bpftrace/bpftrace/tree/master
 
-Then go to //bpftrace-scripts and change the major and minor number to the major and minor number where the models and KV cache are offloaded to in the following experiments.
 
-### NVMeVirt Setup
 
-If you are using a NVMeVirt virtual device, please refer to [https://github.com/snu-csl/nvmevirt](https://github.com/snu-csl/nvmevirt) for the installation and setup guide.
 
-## Figure 2: Tensor Offloading
-
-Download the following codes and put them in the figure2-tensor-offloading directory:
-[https://github.com/deepspeedai/DeepSpeedExamples/tree/master/deepnvme](https://github.com/deepspeedai/DeepSpeedExamples/tree/master/deepnvme)
-
-Then modify:
-* line 7: the directory that the offloded tensors will be read from/written to.
-* line 8: the python binary that supports the DeepSpeed framework.
-
-```bash
-cd figure2-tensor-offloading
-
-# run the experiments
-# NOTE the --fs option is only an identifier that indicates which filesystem is used, it will not reformat the file system.
-python3 run_deepnvme.py --run --fs YOUR_FILE_SYSTEM
-
-# Plot the results
-python3 parse_deepnvme_fs.py --fs YOUR_FILE_SYSTEM
-```
-
-## Figure 3: Model Offloading: DeepSpeed
-
-Download the following file from DeepSpeed examples [https://github.com/deepspeedai/DeepSpeedExamples/tree/master/inference/huggingface/zero_inference](https://github.com/deepspeedai/DeepSpeedExamples/tree/master/inference/huggingface/zero_inference):
-* run_model.sh
-* timer.py
-* utils.py
-And copy them to the 'figure3-model-offloading-deepspeed' directory.
-
-Then modify:
-* line 9: the offload dir
-* line 10: change the python path to the binary of the conda environemnt where DeepSpeed is installed.
-
-```bash
-# Run the experiments
-# Note that the --fs is simply an indicator on which file system is being used, it will not re-format the file system
-# If error ‘Deepspeed inference error: ModuleNotFoundError: No module named 'transformers.integrations.deepspeed'; 'transformers.integrations' is not a package’
-# Change that import to ‘from transformers.deepspeed import xxx’
-python3 deepspeed-opt-13b-io-trace-block.py --fs YOUR_FILE_SYSTEM --bs BATCH_SIZE --run
-
-# Plot the results
-python3 deepspeed-opt-13b-io-trace-parse.py --fs YOUR_FILE_SYSTEM --bs BATCH_SIZE
-```
-
-## Figure 4: Model Offloading: FlexGen
-
-Modify the following lines:
-* line 9: the offload dir
-* line 10: replace the python path with the binary that where the FlexGen is installed.
-
-```bash
-# Run the experiments
-# Note Note that the --fs is simply an indicator on which file system is being used, it will not re-format the file system
-python3 flexgen-opt30b-model-trace-block.py --fs YOUR_FILE_SYSTEM --bs BATCH_SIZE --run
-
-# Plot
-python3 flexgen-opt-30b-io-trace-parse.py --fs YOUR_FILE_SYSTEM --bs BATCH_SIZE
-```
-
-## Figure 5 & 6: KV cache offloding: FlexGen
-
-Modify the following lines:
-* line 9: the offload dir
-* line 10: replace the python path with the binary that where the FlexGen is installed.
-
-```bash
-# Run the experiments
-# Note Note that the --fs is simply an indicator on which file system is being used, it will not re-format the file system
-python3 flexgen-opt-6.7b-kv-trace.py --fs YOUR_FILE_SYSTEM --bs BATCH_SIZE --run
-
-# Plot
-python3 flexgen-opt-6.7b-kv-parse.py --fs YOUR_FILE_SYSTEM --bs BATCH_SIZE
-```
-
-# License
-This code and artifact is distributed under the MIT license. 
-
-```
-MIT License
-
-Copyright (c) 2025 StoNet Research
-
-Permission is hereby granted, free of charge, to any person obtaining a copy
-of this software and associated documentation files (the "Software"), to deal
-in the Software without restriction, including without limitation the rights
-to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-copies of the Software, and to permit persons to whom the Software is
-furnished to do so, subject to the following conditions:
-
-The above copyright notice and this permission notice shall be included in all
-copies or substantial portions of the Software.
-
-THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
-SOFTWARE.
-```
