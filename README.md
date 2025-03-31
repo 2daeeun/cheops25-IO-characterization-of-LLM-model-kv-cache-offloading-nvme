@@ -61,11 +61,9 @@ tracepoint:block:block_rq_issue
 
 <details>
 <summary>check major and minor 확인 방법 [접기/펼치기]</summary>
-```bash
 $ ls -l /dev/sda
 $ brw-rw---- 1 root disk 8, 0  3월 30일  19:42 /dev/sda
 $ /args->dev == ((8 << 20) | 0)/
-```
 </details>
 
 
